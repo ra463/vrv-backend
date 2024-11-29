@@ -13,7 +13,7 @@ app.use(helmet());
 app.use(
   cors({
     origin: "https://vrv-client.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS", "HEAD"],
     credentials: true,
   })
 );
