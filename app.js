@@ -23,11 +23,12 @@ const userRoutes = require("./routes/userRoute.js");
 const noteRoutes = require("./routes/noteRoute.js");
 
 //import validators
-// const userValidator = require("./validators/userValidator.js");
+const userValidator = require("./validators/userValidator.js");
+const noteValidator = require("./validators/noteValidator.js");
 
 // use routes
-app.use("/api/user", userRoutes);
-app.use("/api/note", noteRoutes);
+app.use("/api/user", userValidator, userRoutes);
+app.use("/api/note", noteValidator, noteRoutes);
 
 app.get("/", (req, res) =>
   res.send(`<h1>Its working. Click to visit Link.</h1>`)

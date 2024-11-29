@@ -77,7 +77,7 @@ exports.updateNote = catchAsyncError(async (req, res, next) => {
   const note = await Note.findById(req.params.id);
   if (!note) return next(new ErrorHandler("Note not found", 404));
 
-  const { title, description, status } = req.body;
+  const { title, description } = req.body;
 
   await Note.updateOne(
     {

@@ -1,9 +1,9 @@
 const validator = (req, res, next) => {
   try {
     const fieleds = {
-      allowBody: ["name", "email", "password"],
-      allowQuery: ["google_code", "code"],
-      allowParams: [],
+      allowBody: ["title", "description"],
+      allowQuery: ["title"],
+      allowParams: ["id"],
     };
     const body = Object.keys(req.body);
     const query = Object.keys(req.query);
